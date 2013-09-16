@@ -24,5 +24,7 @@ same process will happen with other buttons.
 In output window our output will print and there will be one button code 
 show if we click on button then user can see the code.
 
+The software has ben developed in CODEBLOCKS GCC COMPILER.
 
+If you will find any error or problem please leave comment here.
 
