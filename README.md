@@ -5,8 +5,8 @@ problem_discription
 		Lab 8: Problem Description
 ==========================================================================================================================
 ==========================================================================================================================
-	we are going to create software in java language.
-in our software there are one main window, one more window (code show) ,one 
+
+In our software there are one main window, one more window (code show) ,one 
 
 output window and few buttons like without synchronization,busy 
 
