@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void w_synch();
+void synch();
+void busy_waiting();
+void spinlock();
+void c_semaphore();
+void b_semaphore();
+void code();
+
+int main()
+{
+	int i,j,s;
+	do{
+	printf("Enter your choice\n");
+	printf("Enter 1 for print without synchronization\n");
+	printf("Enter 2 for print with synchronization\n");
+	printf("Enter 3 for print in busy waiting\n");
+	printf("Enter 4 for print in spinlock\n");
+	printf("Enter 5 for print in counting semaphore\n");
+	printf("Enter 6 for print in binary semaphore\n");
+	printf("Enter 7 for open code\n");
+	printf("Enter 8 for exit\n");
+	scanf("%d",&j);
+	switch(j)
+	{
+		case 1: w_synch();
+		break;
+		case 2: synch();
+		break ;
+		case 3: busy_waiting();
+		break ;
+		case 4: spinlock();
+		break ;
+		case 5: c_semaphore();
+		break ;
+		case 6: b_semaphore();
+		break ;
+		case 7:code();
+		break ;
+		case 8: exit(0);
+		break ;
+		default: 
+		printf("Wrong choice");
+	}
+	
+}while(s);
+}
+void w_synch()
+{
+}
+void synch()
+{
+}
+void busy_waiting()
+{
+}
+void spinlock()
+{
+}
+void c_semaphore()
+{
+}
+void b_semaphore()
+{
+}
+void code()
+{
+}
