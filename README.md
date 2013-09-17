@@ -28,5 +28,7 @@ show if we click on button then user can see the code.
 
 The software has ben developed in CODEBLOCKS GCC COMPILER.
 
-If you will find any error or problem please leave comment here.
-
+If you will find any error or problem please leave comment here or please tell us.
+Shachi Goyal 	205112001
+Shiv Ram Parida 205112034
+Shruti goyal 	205112066
