@@ -3,6 +3,8 @@
 #include<math.h>
 #include<stdlib.h>
 #include<string.h>
+void stringpass(char []);
+void delay(unsigned int);
 void w_synch();
 void synch();
 void busy_waiting();
@@ -14,17 +16,22 @@ void code();
 int main()
 {
 int i,j,s;
-do{
-printf("Enter your choice\n");
-printf("Enter 1 for print without synchronization\n");
-printf("Enter 2 for print with synchronization\n");
-printf("Enter 3 for print in busy waiting\n");
-printf("Enter 4 for print in spinlock\n");
-printf("Enter 5 for print in counting semaphore\n");
-printf("Enter 6 for print in binary semaphore\n");
-printf("Enter 7 for open code\n");
-printf("Enter 8 for exit\n");
-scanf("%d",&j);
+	do{
+	stringpass("	======================================================\n");
+	stringpass("	======================================================\n");
+	stringpass("	==		Enter your choice 		    ==\n");
+	stringpass("	==	Enter 1 for print without synchronization   ==\n");
+	stringpass("	==	Enter 2 for print with synchronization      ==\n");
+	stringpass("	==	Enter 3 for print in busy waiting           ==\n");
+	stringpass("	==	Enter 4 for print in spinlock               ==\n");
+	stringpass("	==	Enter 5 for print in counting semaphore     ==\n");
+	stringpass("	==	Enter 6 for print in binary semaphore       ==\n");
+	stringpass("	==	Enter 7 for open code                       ==\n");
+	stringpass("	==	Enter 8 for exit                            ==\n");
+	stringpass(	"	======================================================\n");
+	stringpass("	======================================================\n");
+	printf("		");
+	scanf("%d",&j);
 switch(j)
 {
 case 1: w_synch();
@@ -44,49 +51,65 @@ break ;
 case 8: exit(0);
 break ;
 default:
-printf("Wrong choice");
+stringpass("Wrong choice");
 }
 s=0;
-printf("want more pree 1");
+stringpass("want more pree 1");
 scanf("%d",&s);
 
 }while(s);
+getch();
+return 0;
 }
 void w_synch()
 {
+		int i,j,k;
+	for(j=0;j<=5;j++)
+	{
+	i=rand();
+	k=i%2;
+	if(k==1)
+	printf("boy\t");
+	else 
+	printf("girl\t");
+	}
+	printf("\n");
 }
 void synch()
 {
-printf("Thread synchronization or serialization, strictly defined, is the application of particular mechanisms to\n");
-printf("ensure that two concurrently-executing threads or processes do not execute specific portions of a program \n");
-printf("at the same time. If one thread has begun to execute a serialized portion of the program,\n");
-printf("any other thread trying to execute this portion must wait until the first thread finishes\n");
-
+stringpass("Thread synchronization or serialization, strictly defined, is the application of particular mechanisms to\n");
+stringpass("ensure that two concurrently-executing threads or processes do not execute specific portions of a program \n");
+stringpass("at the same time. If one thread has begun to execute a serialized portion of the program,\n");
+stringpass("any other thread trying to execute this portion must wait until the first thread finishes\n");
+int i,j;
+for(i=0;i<=5;i++)
+printf("boy\tgirl\t");
+printf("\n");
 }
 void busy_waiting()
 {
-printf("\nDefination :: In software engineering, busy-waiting or spinning is a technique 	in which a process repeatedly checks to see if a condition is true,");
-printf("such as 	whether keyboard input or a lock is available");
-printf("\n**Example**\n");
+stringpass("\nDefination :: In software engineering, busy-waiting or spinning is a technique in which a process repeatedly checks to see if a condition is true,");
+stringpass("such as whether keyboard input or a lock is available");
+stringpass("\n**Example**\n");
 
 
-printf("#include <stdio.h>\n");
-printf("#include <pthread.h>\n#include <unistd.h>\n#include <stdlib.h>\nvolatile int i = 0; \n");
+stringpass("#include <stdio.h>\n");
+stringpass("#include <pthread.h>\n#include <unistd.h>\n#include <stdlib.h>\nvolatile int i = 0; \n");
 /* i is global, so it is visible to all functions.
                        It's also marked volatile, because it
                        may change in a way which is not predictable by the compiler,
                        here from a different thread. */
  
 /* f1 uses a spinlock to wait for i to change from 0. */
-printf("static void *f1(void *p)``);\n{\n while (i==0) \n {\n\t/* do nothing - just keep checking over and over */\n");
-    printf("}\nprintf(``i's value has changed ``)\n");
-	printf(" return NULL; \n}\nstatic void *f2(void *p)\n{\n sleep(60); \t/* sleep for 60 seconds */\ni = 99;\nprintf(``t2 has changed ``);\nreturn NULL;\n}");
+stringpass("static void *f1(void *p)``);\n{\n while (i==0) \n {\n\t/* do nothing - just keep checking over and over */\n");
+   stringpass("}\nprintf(``i's value has changed ``)\n");
+stringpass(" return NULL; \n}\nstatic void *f2(void *p)\n{\n sleep(60); \t/* sleep for 60 seconds */\ni = 99;\nprintf(``t2 has changed ``);\nreturn NULL;\n}");
  
-printf("\nint main()\n{\n int rc;\npthread_t t1, t2;\nrc = pthread_create(&t1, NULL, f1, NULL);\nif (rc != 0)\n { \nfprintf(stderr,``pthread f1 failed``);\nreturn EXIT_FAILURE;\n}");
+stringpass("\nint main()\n{\n int rc;\npthread_t t1, t2;\nrc = pthread_create(&t1, NULL, f1, NULL);\nif (rc != 0)\n { \nfprintf(stderr,``pthread f1 failed``);\nreturn EXIT_FAILURE;\n}");
  
-    printf("\nrc = pthread_create(&t2, NULL, f2, NULL);\nif (rc != 0) \n{\nfprintf(stderr,``pthread f2 failed``);\nreturn EXIT_FAILURE;\n }");
+    stringpass("\nrc = pthread_create(&t2, NULL, f2, NULL);\nif (rc != 0) \n{\nfprintf(stderr,``pthread f2 failed``);\nreturn EXIT_FAILURE;\n }");
  
-    printf("\npthread_join(t1, NULL);\npthread_join(t2, NULL);\n puts(``All pthreads finished.``);\n return 0;\n}");
+  stringpass("\npthread_join(t1, NULL);\npthread_join(t2, NULL);\n puts(``All pthreads finished.``);\n return 0;\n}");
 }
 void spinlock()
 {
@@ -100,4 +123,22 @@ void b_semaphore()
 void code()
 {
 }
+void delay(unsigned int k)
+{
+unsigned int i;
+for(i = 0; i <= k; i++)
+;
+}
+void stringpass(char x[])
+{
+	int i=0;
+	while(x[i]!='\0')
+	{
+	printf("%c",x[i]);
+	 //sleep(1);  
+	delay(100000);
+	i++;
+	}
+}
 
+//SHIV RAM PARIDA//
