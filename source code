@@ -15,7 +15,7 @@ void code();
 
 int main()
 {
-int i,j,s;
+int i,j,s=1;
 	do{
 	stringpass("	======================================================\n");
 	stringpass("	======================================================\n");
@@ -53,63 +53,79 @@ break ;
 default:
 stringpass("Wrong choice");
 }
-s=0;
-stringpass("want more pree 1");
-scanf("%d",&s);
-
-}while(s);
 getch();
+system("cls");
+}while(s);
 return 0;
 }
 void w_synch()
 {
-		int i,j,k;
+		int j,k;
 	for(j=0;j<=5;j++)
 	{
-	i=rand();
-	k=i%2;
+	k=rand()%3;
+	//k=i%2;
 	if(k==1)
-	printf("boy\t");
-	else 
-	printf("girl\t");
+stringpass("boy\t");
+	else
+stringpass("girl\t");
 	}
-	printf("\n");
+stringpass("\n");
 }
 void synch()
 {
-stringpass("Thread synchronization or serialization, strictly defined, is the application of particular mechanisms to\n");
-stringpass("ensure that two concurrently-executing threads or processes do not execute specific portions of a program \n");
-stringpass("at the same time. If one thread has begun to execute a serialized portion of the program,\n");
-stringpass("any other thread trying to execute this portion must wait until the first thread finishes\n");
+stringpass("Thread synchronization or serialization, strictly defined, is the application of particular mechanisms to");
+stringpass("ensure that two concurrently-executing threads or processes do not execute specific portions of a program ");
+stringpass("at the same time. If one thread has begun to execute a serialized portion of the program,");
+stringpass("any other thread trying to execute this portion must wait until the first thread finishes\n\n\n");
 int i,j;
 for(i=0;i<=5;i++)
-printf("boy\tgirl\t");
+stringpass("boy\tgirl\t");
 printf("\n");
 }
 void busy_waiting()
 {
-stringpass("\nDefination :: In software engineering, busy-waiting or spinning is a technique in which a process repeatedly checks to see if a condition is true,");
+	 int i,j;
+stringpass("\nDefination :: In software engineering, busy-waiting is a technique in which a process repeatedly checks to see if a condition is true,");
 stringpass("such as whether keyboard input or a lock is available");
 stringpass("\n**Example**\n");
+printf("Boy\n");
+printf("girl is waiting\n");
+for(j=0;j<10;j++)
+{
+for(i=0;i>20000000;i++)
+{
+}
+printf("waiting\n");
+}
+delay(900000000);
+printf("\n\n\n\ngirl\n");
+printf("boy waiting\n");
+for(j=0;j<10;j++)
+{
+for(i=0;i>20000000;i++)
+{
+}
+printf("waiting\n");
+}
 
-
-stringpass("#include <stdio.h>\n");
+/*stringpass("#include <stdio.h>\n");
 stringpass("#include <pthread.h>\n#include <unistd.h>\n#include <stdlib.h>\nvolatile int i = 0; \n");
-/* i is global, so it is visible to all functions.
+ i is global, so it is visible to all functions.
                        It's also marked volatile, because it
                        may change in a way which is not predictable by the compiler,
-                       here from a different thread. */
- 
-/* f1 uses a spinlock to wait for i to change from 0. */
-stringpass("static void *f1(void *p)``);\n{\n while (i==0) \n {\n\t/* do nothing - just keep checking over and over */\n");
+                       here from a different thread.
+
+ f1 uses a spinlock to wait for i to change from 0.
+stringpass("static void *f1(void *p)``);\n{\n while (i==0) \n {\n\t/* do nothing - just keep checking over and over \n");
    stringpass("}\nprintf(``i's value has changed ``)\n");
-stringpass(" return NULL; \n}\nstatic void *f2(void *p)\n{\n sleep(60); \t/* sleep for 60 seconds */\ni = 99;\nprintf(``t2 has changed ``);\nreturn NULL;\n}");
- 
+stringpass(" return NULL; \n}\nstatic void *f2(void *p)\n{\n sleep(60); \t/* sleep for 60 seconds \ni = 99;\nprintf(``t2 has changed ``);\nreturn NULL;\n}");
+
 stringpass("\nint main()\n{\n int rc;\npthread_t t1, t2;\nrc = pthread_create(&t1, NULL, f1, NULL);\nif (rc != 0)\n { \nfprintf(stderr,``pthread f1 failed``);\nreturn EXIT_FAILURE;\n}");
- 
+
     stringpass("\nrc = pthread_create(&t2, NULL, f2, NULL);\nif (rc != 0) \n{\nfprintf(stderr,``pthread f2 failed``);\nreturn EXIT_FAILURE;\n }");
- 
-  stringpass("\npthread_join(t1, NULL);\npthread_join(t2, NULL);\n puts(``All pthreads finished.``);\n return 0;\n}");
+
+  stringpass("\npthread_join(t1, NULL);\npthread_join(t2, NULL);\n puts(``All pthreads finished.``);\n return 0;\n}");*/
 }
 void spinlock()
 {
@@ -135,8 +151,8 @@ void stringpass(char x[])
 	while(x[i]!='\0')
 	{
 	printf("%c",x[i]);
-	 //sleep(1);  
-	delay(100000);
+	 //sleep(1);
+	delay(5000000);
 	i++;
 	}
 }
